@@ -6,5 +6,46 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title:string;
+  mensaje:string;
+  mng=false;
+  empleados=[
+    {'name':'nombre1',cargo:'obrero'},
+    {'name':'nombre2',cargo:'Gerente'},
+    {'name':'nombre3',cargo:'Programado'}
+  ];
+  model:any ={};
+  constructor()
+  {
+    this.title="Angular Crud"
+    this.mng=false;
+
+  }
+
+  addempleador():void{
+    this.empleados.push(this.model);
+    this.model={};
+    this.mng=true;
+    this.mensaje='objeto agregado';
+  }
+  removeempleador(index):void{
+
+    var respuesta=confirm('Esta seguro de eliminar al empleado: '+this.empleados[index].name);
+    if(respuesta){
+      this.empleados.splice(index,1);
+      this.mng=true;
+      this.mensaje='elemento eliminado';
+    }
+
+  }
+  editempleador():void{
+
+  }
+
+  updateempleador():void{
+
+  }
+  alerta(){
+    this.mng=false;
+  }
 }

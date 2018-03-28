@@ -1,20 +1,90 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+<div class="container app">
+  <div class="row ">
+    <div class="col-sm-8">
+      <h1 class="text-center">{{title}}</h1>
+    </div>
+    <div class="col-sm-4">
+      <div class="alert alert-success alert-dismissable" *ngIf='mng' >
+        <a href="#" class="close" (click)='alerta()'>
+            &times;
+        </a>
+        {{mensaje}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-4">
+  
+      </div>
+      <div class="col-sm-8">
+        <h2>Creacion del dato</h2>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="name" class="control-label col-sm-2">
+              Nombre:
+            </label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="name" id="name" [(ngModel)]="model.name">
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="email" class="control-label col-sm-2">
+              Email:
+            </label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="email" id="email" [(ngModel)]="model.email">
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="cargo" class="control-label col-sm-2">
+              Cargo:
+            </label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="cargo" id="cargo" [(ngModel)]="model.cargo">
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+              <button type="submit" class="btn btn-success" (click)="addempleador()">
+                Guardar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+ 
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Datos de empleado</h2>
+      <table class="table table-border">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Cargo</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let empleado of empleados ; let i = index">
+            <th>{{empleado.name}}</th>
+            <th>{{empleado.cargo}}</th>
+            <th>
+              <a (click)="editempleador(i)" class="btn btn-success">Editar</a>
+              <a (click)="removeempleador(i)" class="btn btn-danger">Eliminar</a>
+            </th>
+         </tr>
+        </tbody>
+      </table>  
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
 
