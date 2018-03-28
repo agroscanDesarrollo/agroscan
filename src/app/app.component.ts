@@ -11,8 +11,8 @@ export class AppComponent {
   mng=false;
   empleados=[
     {'name':'nombre1',cargo:'obrero'},
-    {'name':'nombre2',cargo:'Gerente'},
-    {'name':'nombre3',cargo:'Programado'}
+    {'name':'nombre2',cargo:'Gerente'}
+    
   ];
   model:any ={};
   constructor()
