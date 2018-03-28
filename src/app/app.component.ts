@@ -12,11 +12,7 @@ export class AppComponent {
   empleados=[
     {'name':'nombre1',cargo:'obrero'},
     {'name':'nombre2',cargo:'Gerente'},
-<<<<<<< HEAD
-    {'name':'nombre3',cargo:'Programado'}
-=======
     {'name':'oswaldo',cargo:'trabajo'}
->>>>>>> b649a3a08add00a01e8bc4b567e11cc7f0559aec
   ];
   model:any ={};
   constructor()
