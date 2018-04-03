@@ -17,7 +17,7 @@ export class AppComponent {
   model:any ={};
   constructor()
   {
-    this.title="Angular Crud"
+    this.title="Angular Crud ssss"
     this.mng=false;
 
   }
